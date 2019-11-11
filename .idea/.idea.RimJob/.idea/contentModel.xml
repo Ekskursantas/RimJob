@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\przyg\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\przyg\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_RimJob.-1707485341.00" t="ExcludeRecursive" />
+    <e p="C:\Users\przyg\Documents\RimJob" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Scripts" t="Include">
+          <e p="CameraLook.cs" t="Include" />
+          <e p="CollisionHandler.cs" t="Include" />
+          <e p="MenuCollisionHandler.cs" t="Include" />
+          <e p="Movement.cs" t="Include" />
+          <e p="ObjectSelector.cs" t="Include" />
+          <e p="RimSelectorHud.cs" t="Include" />
+          <e p="RimSpawner.cs" t="Include" />
+          <e p="UI" t="Include">
+            <e p="ButtonHandler.cs" t="Include" />
+            <e p="Selector.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Shaders" t="Include">
+          <e p="SobelFilter.shader" t="Include" />
+          <e p="ToonBasicOutline.shader" t="Include" />
+        </e>
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="RimJob.sln" t="IncludeFlat" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
