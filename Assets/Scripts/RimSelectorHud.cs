@@ -23,12 +23,11 @@ public class RimSelectorHud : MonoBehaviour
 
     private void Start()
     {
-        if(Cursor.visible) Cursor.visible = false;
+        if (Cursor.visible) Cursor.visible = false;
         cam = camera.GetComponent<CameraLook>();
         spawner = GetComponent<RimSpawner>();
         GameObject[] buttons = buttonHandler.buttons;
         buttonRect = new Rect[buttons.Length];
-
     }
 
     void Update()
@@ -41,11 +40,15 @@ public class RimSelectorHud : MonoBehaviour
             if (!selected) return;
             Selector pointer = selector.GetComponent<Selector>();
             MenuCollisionHandler handler = pointer.getSelection().GetComponent<MenuCollisionHandler>();
-            if(handler.id < 0) return;
+            if (handler.id < 0)
+            {
+                handler.deselect();
+                return;
+            }
             spawner.spawn(handler.id);
             selected = false;
             handler.deselect();
-            mouseTravel = new Vector2(0f,0f);
+            mouseTravel = new Vector2(0f, 0f);
             return;
         }
 

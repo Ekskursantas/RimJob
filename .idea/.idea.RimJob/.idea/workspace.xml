@@ -31,10 +31,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/CollisionHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ManuCollisionHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Selector.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/RimSpawner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ObjectSelector.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MenuCollisionHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/RimSpawner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/RimSelectorHud.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MenuCollisionHandler.cs" />
       </list>
     </option>
   </component>
@@ -83,7 +83,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1573481008551</updated>
-      <workItem from="1573481017833" duration="20981000" />
+      <workItem from="1573481017833" duration="23301000" />
     </task>
     <servers />
   </component>

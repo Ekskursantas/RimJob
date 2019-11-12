@@ -11,7 +11,7 @@ public class MenuCollisionHandler : MonoBehaviour
     public Sprite selected;
     public int id;
     private Image imageSwap;
-
+    private Image previousButton;
     private void Start()
     {
         imageSwap = GetComponent<Image>();
@@ -19,11 +19,13 @@ public class MenuCollisionHandler : MonoBehaviour
 
     void OnTriggerEnter2D (Collider2D other)
     {
-        imageSwap.sprite = selected;
         Selector pointer = other.GetComponent<Selector>();
-        if (pointer.getSelection() == null) return;
-        Image previousButton = pointer.getSelection().GetComponent<Image>();
-        previousButton.sprite = unselected;
+        if (pointer.getSelection() != null)
+        {
+            previousButton = pointer.getSelection().GetComponent<Image>();
+            previousButton.sprite = unselected;
+        }
+        imageSwap.sprite = selected;
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -35,6 +37,7 @@ public class MenuCollisionHandler : MonoBehaviour
 
     public void deselect()
     {
+        previousButton.sprite = unselected;
         imageSwap.sprite = unselected;
     }
 }
