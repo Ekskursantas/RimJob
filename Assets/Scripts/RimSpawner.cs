@@ -9,11 +9,18 @@ public class RimSpawner : MonoBehaviour
     public GameObject camera;
 
     public float distance;
-    
+
     // Update is called once per frame
 
-    public void spawn(int id)
+    public void spawn(int id, Color tint)
     {
-        Instantiate(rims[id], camera.transform.position + camera.transform.forward*distance, camera.transform.rotation);
+        GameObject rim = Instantiate(rims[id], camera.transform.position + camera.transform.forward * distance,
+            camera.transform.rotation);
+        if (tint.Equals(Color.clear)) return;
+        Renderer[] renderers = rim.GetComponentsInChildren<Renderer>();
+        foreach (Renderer renderer in renderers)
+        {
+            renderer.material.color = tint;
+        }
     }
 }

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ed2d3c0-a3cd-407f-9991-f45819d35711" name="Default Changelist" comment="" />
@@ -13,13 +13,20 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CameraLook.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CVGames/Cartoon Garage/Scripts/DoorTrigger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/RimSelectorHud.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/RimSpawner.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/WallSnapper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CVGames/Cartoon Garage/Scripts/PlayerMove.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ColorPickerTriangle/Scripts/ColorPickerTriangle.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ObjectSelector.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Selector.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CollisionHandler.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MenuCollisionHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/ButtonHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Magnet.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ColorPickerTriangle/Example/example.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/RimSpawner.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MenuCollisionHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ItemHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Movement.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -28,13 +35,18 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/RimSpanwer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CameraLook.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/ButtonHandler.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/CollisionHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ManuCollisionHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Selector.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ObjectSelector.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/RimSpawner.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/RimSelectorHud.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MenuCollisionHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/ColorPickerTriangle/Example/example.cs" />
+        <option value="$PROJECT_DIR$/Assets/ColorPickerTriangle/Scripts/ColorPickerTriangle.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ObjectSelector.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/RimSelectorHud.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ItemHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CollisionHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WallSnapper.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Magnet.cs" />
       </list>
     </option>
   </component>
@@ -84,6 +96,7 @@
       <option name="presentableId" value="Default" />
       <updated>1573481008551</updated>
       <workItem from="1573481017833" duration="23301000" />
+      <workItem from="1573567259688" duration="21237000" />
     </task>
     <servers />
   </component>
@@ -97,7 +110,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

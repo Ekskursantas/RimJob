@@ -11,7 +11,7 @@ public class CollisionHandler : MonoBehaviour
     // Update is called once per frame
     private void OnCollisionEnter(Collision other)
     {
-        Debug.Log("Entered collision");
+        if (other.collider.CompareTag("Magnet")) return;
         colliding = true;
     }
     
