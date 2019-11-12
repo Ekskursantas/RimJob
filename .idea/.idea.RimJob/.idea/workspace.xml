@@ -41,11 +41,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/MenuCollisionHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/ColorPickerTriangle/Example/example.cs" />
         <option value="$PROJECT_DIR$/Assets/ColorPickerTriangle/Scripts/ColorPickerTriangle.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ObjectSelector.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/RimSelectorHud.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ItemHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CollisionHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/WallSnapper.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ObjectSelector.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Magnet.cs" />
       </list>
     </option>
@@ -96,7 +96,7 @@
       <option name="presentableId" value="Default" />
       <updated>1573481008551</updated>
       <workItem from="1573481017833" duration="23301000" />
-      <workItem from="1573567259688" duration="21237000" />
+      <workItem from="1573567259688" duration="22083000" />
     </task>
     <servers />
   </component>

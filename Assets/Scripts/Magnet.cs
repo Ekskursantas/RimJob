@@ -6,6 +6,7 @@ public class Magnet : MonoBehaviour
 {
     private void OnCollisionEnter(Collision other)
     {
+        Debug.Log(other);
         other.transform.parent = transform;
     }
 }
