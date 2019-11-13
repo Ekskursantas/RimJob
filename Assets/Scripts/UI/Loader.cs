@@ -22,6 +22,7 @@ public class Loader : MonoBehaviour
         {
             menu.SetActive(!menu.activeSelf);
             cam.LockCamera(menu.activeSelf);
+            Cursor.visible = menu.activeSelf;
             if (Cursor.lockState != CursorLockMode.None && menu.activeSelf) Cursor.lockState = CursorLockMode.None;
             else if (Cursor.lockState != CursorLockMode.Locked && !menu.activeSelf) Cursor.lockState = CursorLockMode.Locked;
         }
@@ -30,6 +31,7 @@ public class Loader : MonoBehaviour
     public void CloseUI()
     {
         menu.SetActive(false);
+        Cursor.visible = menu.activeSelf;
         cam.LockCamera(false);
         if (Cursor.lockState != CursorLockMode.Locked) Cursor.lockState = CursorLockMode.Locked;
     }

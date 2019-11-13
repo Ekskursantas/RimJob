@@ -10,17 +10,14 @@ public class MainMenuManager : MonoBehaviour
     private Player playerInfo;
     private RimSpawner rimInfo;
     public static bool isNew = true;
-    private void Start()
-    {
-        playerInfo = new Player();
-        rimInfo =  new RimSpawner();
-    }
 
     // Start is called before the first frame update
     public void LoadMainScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         isNew = true;
+        Cursor.visible = true;
+
     }
 
     public void QuitGame()
@@ -32,5 +29,6 @@ public class MainMenuManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         isNew = false;
+
     }
 }

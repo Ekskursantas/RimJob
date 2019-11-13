@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
 
     public void Awake()
     {
+        Cursor.visible = false;
         move = player.GetComponent<Movement>();
         _player = player.GetComponent<Player>();
         _rimSpawner = rimHandler.GetComponent<RimSpawner>();
