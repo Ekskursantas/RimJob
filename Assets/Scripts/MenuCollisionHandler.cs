@@ -42,7 +42,7 @@ public class MenuCollisionHandler : MonoBehaviour
 
     public void Deselect()
     {
-        previousButton.sprite = unselected;
+        if(previousButton !=null) previousButton.sprite = unselected;
         imageSwap.sprite = unselected;
     }
 }

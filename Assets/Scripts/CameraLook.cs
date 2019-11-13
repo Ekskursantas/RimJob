@@ -41,7 +41,7 @@ public class CameraLook : MonoBehaviour
 
     public void resetCamera()
     {
-        mouseTravel.x = character.transform.localRotation.eulerAngles.y;
+        mouseTravel.x = character.transform.localEulerAngles.y;
         float angle = transform.localEulerAngles.x;
         angle = (angle > 180) ? angle - 360 : angle;
         mouseTravel.y = -angle;

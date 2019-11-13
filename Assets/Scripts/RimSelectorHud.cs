@@ -10,7 +10,7 @@ public class RimSelectorHud : MonoBehaviour
     public GameObject primaryCamera;
     public GameObject rimColorSelector;
     public GameObject selector;
-    public ButtonHandler buttonHandler;
+    public GameObject garage;
     public float sensitivity = 5.0f;
     public float smoothness = 2.0f;
 
@@ -25,6 +25,7 @@ public class RimSelectorHud : MonoBehaviour
     private ColorPickerTriangle CP;
     private bool isPainting = false;
     private bool disabled = true;
+    private ItemHandler _itemHandler;
 
 
     private void Start()
@@ -33,11 +34,13 @@ public class RimSelectorHud : MonoBehaviour
         mainCamera = primaryCamera.GetComponent<CameraLook>();
         spawner = GetComponent<RimSpawner>();
         CP = rimColorSelector.GetComponent<ColorPickerTriangle>();
-        GameObject[] buttons = buttonHandler.buttons;
+        _itemHandler = garage.GetComponent<ItemHandler>();
+
     }
 
     void Update()
     {
+        if (!_itemHandler.IsInRange()) return;
         if (!Input.GetKey(KeyCode.R))
         {
             if (disabled) return;
@@ -47,6 +50,7 @@ public class RimSelectorHud : MonoBehaviour
             disabled = true;
             if (!selected) return;
             Selector pointer = selector.GetComponent<Selector>();
+            if (pointer.GetSelection() == null) return;
             MenuCollisionHandler handler = pointer.GetSelection().GetComponent<MenuCollisionHandler>();
             if (handler.id < 0)
             {
@@ -88,5 +92,5 @@ public class RimSelectorHud : MonoBehaviour
         if (Cursor.lockState != CursorLockMode.None) Cursor.lockState = CursorLockMode.None;
         CP.SetNewColor(Color.white);
         isPainting = true;
-    }
+        }
 }

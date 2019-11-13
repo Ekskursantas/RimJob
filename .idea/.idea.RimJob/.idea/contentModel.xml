@@ -28,8 +28,12 @@
         <e p="Scripts" t="Include">
           <e p="CameraLook.cs" t="Include" />
           <e p="CollisionHandler.cs" t="Include" />
+          <e p="GameManager.cs" t="Include" />
           <e p="ItemHandler.cs" t="Include" />
           <e p="Magnet.cs" t="Include" />
+          <e p="MainMenu" t="Include">
+            <e p="MainMenuManager.cs" t="Include" />
+          </e>
           <e p="MenuCollisionHandler.cs" t="Include" />
           <e p="Movement.cs" t="Include" />
           <e p="ObjectSelector.cs" t="Include" />
@@ -43,7 +47,6 @@
             <e p="SaveSystem.cs" t="Include" />
           </e>
           <e p="UI" t="Include">
-            <e p="ButtonHandler.cs" t="Include" />
             <e p="Loader.cs" t="Include" />
             <e p="Selector.cs" t="Include" />
           </e>

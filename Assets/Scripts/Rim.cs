@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.IMGUI.Controls;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Rim : MonoBehaviour
 {
@@ -9,16 +6,31 @@ public class Rim : MonoBehaviour
     public int id;
     public Vector3 position;
     public Vector3 angle;
-    public Color color;
+    public bool isKinematic;
 
     private void Update()
     {
-        position = transform.position;
-        angle = transform.rotation.eulerAngles;
-        color = GetComponentInChildren<Renderer>().material.color;
+        position = transform.localPosition;
+        angle = transform.localEulerAngles;
     }
 
-    public void UpdateColor()
+
+    public string[] getColors()
     {
+        Renderer[] renderers = GetComponentsInChildren<Renderer>();
+        string[] colors = new string[renderers.Length];
+        for (int i = 0; i < colors.Length; i++)
+        {
+            colors[i] = ColorUtility.ToHtmlStringRGBA(renderers[i].material.color);
+        }
+
+        return colors;
     }
+
+    public bool kinematic()
+    {
+        return GetComponent<Rigidbody>().isKinematic;
+    }
+
+ 
 }

@@ -116,6 +116,36 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5440068, y: 5.915534, z: 2.525575}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &3796034964022198156
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6783438461877936484}
+  m_Layer: 0
+  m_Name: Snapper (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6783438461877936484
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3796034964022198156}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.234, y: 0.5, z: -1.34}
+  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_Children: []
+  m_Father: {fileID: 6767297062509261222}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4105615109347251490
 GameObject:
   m_ObjectHideFlags: 0
@@ -448,6 +478,36 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!1 &5979548757552386659
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7964122761631432154}
+  m_Layer: 0
+  m_Name: Snapper
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7964122761631432154
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5979548757552386659}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.234, y: 0.5, z: 1.38}
+  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_Children: []
+  m_Father: {fileID: 6767297062509261222}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6935540448500412792
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,6 +638,7 @@ GameObject:
   - component: {fileID: 5712037368450030916}
   - component: {fileID: 6179216718478974078}
   - component: {fileID: 7405343637818475867}
+  - component: {fileID: 5928349964815720327}
   m_Layer: 0
   m_Name: Flexin
   m_TagString: Selection
@@ -606,6 +667,8 @@ Transform:
   - {fileID: 3557262517582582999}
   - {fileID: 5849722994391648523}
   - {fileID: 2730359613974258744}
+  - {fileID: 7964122761631432154}
+  - {fileID: 6783438461877936484}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -678,7 +741,26 @@ MonoBehaviour:
   id: 2
   position: {x: 0, y: 0, z: 0}
   angle: {x: 0, y: 0, z: 0}
-  Color: {r: 0, g: 0, b: 0, a: 0}
+  color: {r: 0, g: 0, b: 0, a: 0}
+--- !u!114 &5928349964815720327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8224352115769354888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db40f7c5b9f2d1142b7dc34d64c40d6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  snapper: {fileID: 7964122761631432154}
+  snapper2: {fileID: 6783438461877936484}
+  snapDisntance: 0.05
+  magnet:
+    serializedVersion: 2
+    m_Bits: 512
+  snapped: 0
 --- !u!1 &8699620687553025351
 GameObject:
   m_ObjectHideFlags: 0
