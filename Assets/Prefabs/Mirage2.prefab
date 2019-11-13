@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 544918985426437981}
   - component: {fileID: 3512883299759621538}
   - component: {fileID: 8683511749043112060}
+  - component: {fileID: 2287583332815689990}
   m_Layer: 0
   m_Name: Mirage2
   m_TagString: Selection
@@ -129,6 +130,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.915534, y: 0.5440068, z: 2.525575}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2287583332815689990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544918985426437971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1222bb4dc71e7ed45838cdec07994f96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 4
+  position: {x: 0, y: 0, z: 0}
+  angle: {x: 0, y: 0, z: 0}
+  Color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1120162791457280694
 GameObject:
   m_ObjectHideFlags: 0

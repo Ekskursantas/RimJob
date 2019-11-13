@@ -37,7 +37,7 @@ public class ObjectSelector : MonoBehaviour
             var selection = hit;
             if (!selection.transform.CompareTag("Selection")) return;
             col = selection.transform.gameObject.GetComponent<CollisionHandler>();
-            if (col.isColliding()) col.resetCollision();
+            if (col.IsColliding()) col.ResetCollision();
             carried = selection;
             carrying = true;
             release = false;
@@ -46,23 +46,23 @@ public class ObjectSelector : MonoBehaviour
         {
             if (!destroyed)
             {
-                if (!col.isColliding())
+                if (!col.IsColliding())
                 {
 
-                    carryObject(carried);
+                    CarryObject(carried);
 
                     if (Input.GetKeyUp(KeyCode.Mouse2) && !isPainting)
                     {
-                        camLook.lockCamera();
+                        camLook.LockCamera(true);
                         rimColorSelector.SetActive(true);
                         if (!Cursor.visible) Cursor.visible = true;
                         if (Cursor.lockState != CursorLockMode.None) Cursor.lockState = CursorLockMode.None;
-                        objectRenderer = carried.transform.gameObject.GetComponent<Renderer>();
+                        objectRenderer = carried.transform.gameObject.GetComponentInChildren<Renderer>();
                         CP.SetNewColor(objectRenderer.material.color);
                         isPainting = true;
                     } else if (Input.GetKeyUp(KeyCode.Mouse2) && isPainting)
                     {
-                        camLook.unlockCamera();
+                        camLook.LockCamera(false);;
                         rimColorSelector.SetActive(false);
                         if (!Cursor.visible) Cursor.visible = false;
                         if (Cursor.lockState != CursorLockMode.Locked) Cursor.lockState = CursorLockMode.Locked;
@@ -84,7 +84,7 @@ public class ObjectSelector : MonoBehaviour
 
             if (Input.GetKey(KeyCode.E)) return;
             if (release) return;
-            camLook.unlockCamera();
+            camLook.LockCamera(false);;
             rimColorSelector.SetActive(false);
             if (!Cursor.visible) Cursor.visible = false;
             if (Cursor.lockState != CursorLockMode.Locked) Cursor.lockState = CursorLockMode.Locked;
@@ -102,7 +102,7 @@ public class ObjectSelector : MonoBehaviour
     }
 
 
-    void carryObject(RaycastHit o)
+    void CarryObject(RaycastHit o)
     {
         o.rigidbody.useGravity = false;
         o.transform.position = transform.position + transform.forward * distance;

@@ -24,9 +24,9 @@ public class MenuCollisionHandler : MonoBehaviour
         Debug.Log(other);
         if (!other.CompareTag("Pointer")) return;
         Selector pointer = other.GetComponent<Selector>();
-        if (pointer.getSelection() != null)
+        if (pointer.GetSelection() != null)
         {
-            previousButton = pointer.getSelection().GetComponent<Image>();
+            previousButton = pointer.GetSelection().GetComponent<Image>();
             previousButton.sprite = unselected;
         }
 
@@ -37,11 +37,11 @@ public class MenuCollisionHandler : MonoBehaviour
     {
         if (!other.CompareTag("Pointer")) return;
         Selector pointer = other.GetComponent<Selector>();
-        pointer.setSelection(transform.gameObject);
+        pointer.SetSelection(transform.gameObject);
     }
 
 
-    public void deselect()
+    public void Deselect()
     {
         previousButton.sprite = unselected;
         imageSwap.sprite = unselected;

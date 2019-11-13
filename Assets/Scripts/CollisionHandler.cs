@@ -16,12 +16,12 @@ public class CollisionHandler : MonoBehaviour
     }
     
     
-    public bool isColliding()
+    public bool IsColliding()
     {
         return colliding;
     }
 
-    public void resetCollision()
+    public void ResetCollision()
     {
         colliding = false;
     }

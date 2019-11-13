@@ -35,13 +35,10 @@ public class CameraLook : MonoBehaviour
         character.transform.localRotation = Quaternion.AngleAxis(mouseTravel.x, character.transform.up);
     }
     
-    public void lockCamera()
+    public void LockCamera(bool lockBool)
     {
-        cameraLock = true;
+        cameraLock = lockBool;
     }
 
-    public void unlockCamera()
-    {
-        cameraLock = false;
-    }
+  
 }

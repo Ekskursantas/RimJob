@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Selection
   - Pointer
+  - Magnet
   layers:
   - Default
   - TransparentFX

@@ -13,12 +13,12 @@ public class Selector : MonoBehaviour
     public float smoothness = 2.0f;
     private GameObject sellection;
 
-    public void setSelection(GameObject obj)
+    public void SetSelection(GameObject obj)
     {
         sellection = obj;
     }
 
-    public GameObject getSelection()
+    public GameObject GetSelection()
     {
         return sellection;
     }
