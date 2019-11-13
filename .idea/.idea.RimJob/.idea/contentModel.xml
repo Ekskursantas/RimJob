@@ -33,10 +33,12 @@
           <e p="MenuCollisionHandler.cs" t="Include" />
           <e p="Movement.cs" t="Include" />
           <e p="ObjectSelector.cs" t="Include" />
+          <e p="Player.cs" t="Include" />
           <e p="Rim.cs" t="Include" />
           <e p="RimSelectorHud.cs" t="Include" />
           <e p="RimSpawner.cs" t="Include" />
           <e p="Save" t="Include">
+            <e p="PlayerData.cs" t="Include" />
             <e p="RimData.cs" t="Include" />
             <e p="SaveSystem.cs" t="Include" />
           </e>

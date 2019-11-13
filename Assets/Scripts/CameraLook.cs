@@ -6,7 +6,6 @@ public class CameraLook : MonoBehaviour
 {
     private Vector2 mouseTravel;
     private Vector2 smooth;
-    private Vector2 lastValidMouseMove;
     private Vector2 mouse;
     public float sensitivity = 5.0f;
     public float smoothness = 2.0f;
@@ -38,6 +37,14 @@ public class CameraLook : MonoBehaviour
     public void LockCamera(bool lockBool)
     {
         cameraLock = lockBool;
+    }
+
+    public void resetCamera()
+    {
+        mouseTravel.x = character.transform.localRotation.eulerAngles.y;
+        float angle = transform.localEulerAngles.x;
+        angle = (angle > 180) ? angle - 360 : angle;
+        mouseTravel.y = -angle;
     }
 
   

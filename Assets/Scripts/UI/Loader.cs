@@ -25,4 +25,11 @@ public class Loader : MonoBehaviour
             if (Cursor.lockState != CursorLockMode.None) Cursor.lockState = CursorLockMode.None;
         }
     }
+
+    public void CloseUI()
+    {
+        menu.SetActive(false);
+        cam.LockCamera(false);
+        if (Cursor.lockState != CursorLockMode.Locked) Cursor.lockState = CursorLockMode.Locked;
+    }
 }

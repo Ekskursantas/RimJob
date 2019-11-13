@@ -21,7 +21,6 @@ public class MenuCollisionHandler : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(other);
         if (!other.CompareTag("Pointer")) return;
         Selector pointer = other.GetComponent<Selector>();
         if (pointer.GetSelection() != null)

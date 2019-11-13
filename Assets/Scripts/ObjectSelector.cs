@@ -33,6 +33,11 @@ public class ObjectSelector : MonoBehaviour
             if (!Input.GetKey(KeyCode.E)) return;
             var ray = cam.ScreenPointToRay(Input.mousePosition);
             if (!Physics.Raycast(ray, out var hit)) return;
+            if (hit.collider.CompareTag("Switch"))
+            {
+                
+                return;
+            }
             if (!(hit.distance < distance)) return;
             var selection = hit;
             if (!selection.transform.CompareTag("Selection")) return;
@@ -70,7 +75,7 @@ public class ObjectSelector : MonoBehaviour
                     }
                     else if (Input.GetKey(KeyCode.Mouse1))
                     {
-                        Destroy(carried.transform.gameObject);
+                        RimSpawner.DestroyRim(carried.transform.gameObject);
                         destroyed = true;
                     }
                     if (isPainting) objectRenderer.material.color = CP.TheColor;
