@@ -24,7 +24,6 @@ public class RimSpawner : MonoBehaviour
             GameObject firstRim = spawnedRims[0];
             Destroy(firstRim);
             spawnedRims.RemoveAt(0);
-            Debug.Log("Removed");
         }
 
         GameObject rim = Instantiate(rims[id], camera.transform.position + camera.transform.forward * distance,

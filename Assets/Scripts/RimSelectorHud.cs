@@ -5,7 +5,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class RimSelectorHud : MonoBehaviour
-{
+{ 
+    public GameObject uiManager;
     public GameObject rimMenu;
     public GameObject primaryCamera;
     public GameObject rimColorSelector;
@@ -26,10 +27,12 @@ public class RimSelectorHud : MonoBehaviour
     private bool isPainting = false;
     private bool disabled = true;
     private ItemHandler _itemHandler;
-
+    private InfoManager uiControls;
 
     private void Start()
     {
+        
+        uiControls = uiManager.GetComponent<InfoManager>();
         if (Cursor.visible) Cursor.visible = false;
         mainCamera = primaryCamera.GetComponent<CameraLook>();
         spawner = GetComponent<RimSpawner>();
@@ -40,6 +43,7 @@ public class RimSelectorHud : MonoBehaviour
 
     void Update()
     {
+        if (uiControls.HoldUIIsActive()) return;
         if (!_itemHandler.IsInRange()) return;
         if (!Input.GetKey(KeyCode.R))
         {
@@ -49,7 +53,16 @@ public class RimSelectorHud : MonoBehaviour
             mainCamera.LockCamera(false);
             disabled = true;
             if (!selected) return;
+            
+            rimColorSelector.SetActive(false);
             Selector pointer = selector.GetComponent<Selector>();
+            colorSelect = false;
+            selected = false;
+            mouseTravel = new Vector2(0f, 0f);
+            uiControls.SetActiveCreationUI(false);
+            uiControls.SetActiveMainUI(true);
+            Cursor.visible = false;
+            
             if (pointer.GetSelection() == null) return;
             MenuCollisionHandler handler = pointer.GetSelection().GetComponent<MenuCollisionHandler>();
             if (handler.id < 0)
@@ -57,15 +70,10 @@ public class RimSelectorHud : MonoBehaviour
                 handler.Deselect();
                 return;
             }
-
             spawner.Spawn(handler.id, isPainting ? CP.TheColor : Color.clear);
-            rimColorSelector.SetActive(false);
-            colorSelect = false;
-            selected = false;
             handler.Deselect();
-            Cursor.visible = false;
             isPainting = false;
-            mouseTravel = new Vector2(0f, 0f);
+
             return;
         }
 
@@ -78,14 +86,20 @@ public class RimSelectorHud : MonoBehaviour
             smooth.y = Mathf.Lerp(smooth.y, mouse.y, 1f / smoothness);
             mouseTravel += smooth;
             selector.transform.localRotation = Quaternion.AngleAxis(-mouseTravel.x, Vector3.forward);
-            mainCamera.LockCamera(true);
-            rimMenu.SetActive(true);
-            selected = true;
-            disabled = false;
+            if (!selected)
+            {
+                uiControls.SetActiveCreationUI(true);
+                uiControls.SetActiveMainUI(false);
+                mainCamera.LockCamera(true);
+                rimMenu.SetActive(true);
+                selected = true;
+                disabled = false;
+            }
         }
 
         if (!Input.GetKey(KeyCode.Mouse0)) return;
         if (isPainting) return;
+        uiControls.SetActiveCreationUI(false);
         colorSelect = true;
         rimColorSelector.SetActive(true);
         if (!Cursor.visible) Cursor.visible = true;

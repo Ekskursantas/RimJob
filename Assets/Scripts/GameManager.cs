@@ -35,7 +35,6 @@ public class GameManager : MonoBehaviour
     {
         PlayerData playerData = SaveSystem.LoadPlayer();
         move.LoadPosition(new Vector3(playerData.savePos[0], playerData.savePos[1], playerData.savePos[2]));
-        Debug.Log(playerData.playerYangle);
         player.transform.localRotation = Quaternion.Euler(0, playerData.playerYangle, 0);
         playerCamera.transform.localRotation = Quaternion.Euler(playerData.cameraXangle, 0, 0);
         playerCamera.GetComponent<CameraLook>().resetCamera();
@@ -72,7 +71,6 @@ public class GameManager : MonoBehaviour
             {
                 if (ColorUtility.TryParseHtmlString("#" + loadedRims.saveColor[i][j], out Color tint))
                 {
-                    Debug.Log(tint);
                     if (tint.Equals(Color.clear)) return;
                     renderers[j].material.color = tint;
                 }

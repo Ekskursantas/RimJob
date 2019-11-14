@@ -5,10 +5,12 @@ using UnityEngine;
 
 public class ObjectSelector : MonoBehaviour
 {
+    public GameObject uiManager;
     public float pickUpDistance;
     public float holdDistance;
     public float smooth;
     public GameObject rimColorSelector;
+  
     private bool carrying = false;
     private bool destroyed = false;
     private CollisionHandler col;
@@ -19,19 +21,23 @@ public class ObjectSelector : MonoBehaviour
     private ColorPickerTriangle CP;
     private bool release = false;
     private Renderer[] objectRenderer;
-    public WallSnapper wheel;
     private Vector3 middle;
+    private InfoManager uiControls;
+    private WallSnapper wheel;
+
     private void Start()
     {
         cam = GetComponent<Camera>();
         camLook = GetComponent<CameraLook>();
         CP = rimColorSelector.GetComponent<ColorPickerTriangle>();
         middle = new Vector3(Screen.width/2, Screen.height/2, 0f);
+        uiControls = uiManager.GetComponent<InfoManager>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (uiControls.CreateUIIsActive()) return;
         if (!carrying)
         {
             if (!Input.GetKey(KeyCode.E)) return;
@@ -45,6 +51,11 @@ public class ObjectSelector : MonoBehaviour
             if (!(hit.distance < pickUpDistance)) return;
             var selection = hit;
             if (!selection.transform.CompareTag("Selection")) return;
+            uiControls.SetActiveHoldUI(true);
+            uiControls.SetActiveMainUI(false);
+            uiControls.SetActiveChangeColor(true);
+            uiControls.SetActiveConfirmColor(false);
+
             wheel = selection.transform.gameObject.GetComponent<WallSnapper>();
             carried = selection;
             carrying = true;
@@ -65,6 +76,8 @@ public class ObjectSelector : MonoBehaviour
                         objectRenderer = carried.transform.gameObject.GetComponentsInChildren<Renderer>();
                         CP.SetNewColor(objectRenderer[0].material.color);
                         isPainting = true;
+                        uiControls.SetActiveChangeColor(false);
+                        uiControls.SetActiveConfirmColor(true);
                     } else if (Input.GetKeyUp(KeyCode.Mouse1) && isPainting)
                     {
                         camLook.LockCamera(false);;
@@ -72,6 +85,7 @@ public class ObjectSelector : MonoBehaviour
                         if (!Cursor.visible) Cursor.visible = false;
                         if (Cursor.lockState != CursorLockMode.Locked) Cursor.lockState = CursorLockMode.Locked;
                         isPainting = false;
+
                     }
                     else if (Input.GetKey(KeyCode.Delete))
                     {
@@ -102,6 +116,8 @@ public class ObjectSelector : MonoBehaviour
                 destroyed = false;
                 return;
             }
+            uiControls.SetActiveHoldUI(false);
+            uiControls.SetActiveMainUI(true);
 
             carried.rigidbody.useGravity = true;    
             release = true;

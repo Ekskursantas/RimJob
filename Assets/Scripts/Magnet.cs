@@ -8,7 +8,6 @@ public class Magnet : MonoBehaviour
     public GameObject level;
     private void OnCollisionEnter(Collision other)
     {
-        Debug.Log("Collision Entered");
         //other.gameObject.GetComponent<Rigidbody> ().isKinematic = true;
         other.transform.parent = transform;
         //ObjectSelector.snapped = true;
@@ -17,7 +16,6 @@ public class Magnet : MonoBehaviour
     
     private void OnCollisionExit(Collision other)
     {
-        Debug.Log("Collision Left");
         //other.gameObject.GetComponent<Rigidbody> ().isKinematic = false;
         other.transform.parent = level.transform;
        // other.transform.position = Vector2.zero;
