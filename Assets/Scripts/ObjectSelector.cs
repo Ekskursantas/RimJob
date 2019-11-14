@@ -10,7 +10,7 @@ public class ObjectSelector : MonoBehaviour
     public float holdDistance;
     public float smooth;
     public GameObject rimColorSelector;
-
+    public float rotationSpeed;
     private bool carrying = false;
     private bool destroyed = false;
     private RaycastHit carried;
@@ -23,6 +23,7 @@ public class ObjectSelector : MonoBehaviour
     private Vector3 middle;
     private InfoManager uiControls;
     private WallSnapper wheel;
+    private bool lockedForRotation = false;
 
     private void Start()
     {
@@ -67,7 +68,22 @@ public class ObjectSelector : MonoBehaviour
             {
                 CarryObject(carried);
                 //for some reason sometimes this statement does not react and it takes few clicks for it to work....
-                if (Input.GetKeyUp(KeyCode.Mouse1) && !isPainting)
+                if (Input.GetKey(KeyCode.Mouse2))
+                {
+                    float rotx = Input.GetAxisRaw("Mouse X") * rotationSpeed * Mathf.Deg2Rad;
+                    float roty = Input.GetAxisRaw("Mouse Y") * rotationSpeed * Mathf.Deg2Rad;
+                    carried.transform.RotateAround(Vector3.up, -rotx);
+                    carried.transform.RotateAround(Vector3.right, roty);
+                    if (!lockedForRotation)
+                    {
+                        carried.rigidbody.freezeRotation = true;
+                        uiControls.SetActiveHoldUI(false);
+                        Cursor.lockState = CursorLockMode.None;
+                        camLook.LockCamera(true);
+                        lockedForRotation = true;
+                    }
+                }
+                else if (Input.GetKeyUp(KeyCode.Mouse1) && !isPainting)
                 {
                     camLook.LockCamera(true);
                     rimColorSelector.SetActive(true);
@@ -90,7 +106,7 @@ public class ObjectSelector : MonoBehaviour
                 else if (Input.GetKey(KeyCode.Delete))
                 {
                     uiControls.SetActiveHoldUI(false);
-                    if(ItemHandler.inRange) uiControls.SetActiveMainUI(true);
+                    if (ItemHandler.inRange) uiControls.SetActiveMainUI(true);
                     RimSpawner.DestroyRim(carried.transform.gameObject);
                     destroyed = true;
                 }
@@ -104,11 +120,19 @@ public class ObjectSelector : MonoBehaviour
                 }
             }
 
+            if (!Input.GetKey(KeyCode.Mouse2) && lockedForRotation)
+            {
+                carried.rigidbody.freezeRotation = false;
+                Cursor.lockState = CursorLockMode.Locked;
+                camLook.LockCamera(false);
+                lockedForRotation = false;
+                uiControls.SetActiveHoldUI(true);
+            }
 
             if (Input.GetKey(KeyCode.E)) return;
             if (release) return;
             camLook.LockCamera(false);
-            ;
+            lockedForRotation = true;
             rimColorSelector.SetActive(false);
             if (!Cursor.visible) Cursor.visible = false;
             if (Cursor.lockState != CursorLockMode.Locked) Cursor.lockState = CursorLockMode.Locked;
@@ -121,7 +145,7 @@ public class ObjectSelector : MonoBehaviour
             }
 
             uiControls.SetActiveHoldUI(false);
-            if(ItemHandler.inRange) uiControls.SetActiveMainUI(true);
+            if (ItemHandler.inRange) uiControls.SetActiveMainUI(true);
             Cursor.visible = false;
             carried.rigidbody.useGravity = true;
             release = true;

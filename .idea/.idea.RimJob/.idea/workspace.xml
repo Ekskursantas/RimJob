@@ -63,10 +63,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/CameraLook.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Selector.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/RimSelectorHud.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ObjectSelector.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/InfoManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ItemHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Movement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ObjectSelector.cs" />
       </list>
     </option>
   </component>
@@ -120,7 +120,7 @@
       <workItem from="1573567259688" duration="29331000" />
       <workItem from="1573640186162" duration="37691000" />
       <workItem from="1573685674781" duration="15000" />
-      <workItem from="1573685710304" duration="10351000" />
+      <workItem from="1573685710304" duration="12435000" />
     </task>
     <servers />
   </component>
