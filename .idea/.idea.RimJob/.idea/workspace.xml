@@ -31,6 +31,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/InfoManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MenuCollisionHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MainMenu/MainMenuManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Shaders/Outline.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ItemHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Loader.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Save/PlayerData.cs" root0="FORCE_HIGHLIGHTING" />
@@ -67,6 +68,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/ItemHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Movement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ObjectSelector.cs" />
+        <option value="$PROJECT_DIR$/Assets/Shaders/Outline.shader" />
       </list>
     </option>
   </component>
@@ -120,7 +122,8 @@
       <workItem from="1573567259688" duration="29331000" />
       <workItem from="1573640186162" duration="37691000" />
       <workItem from="1573685674781" duration="15000" />
-      <workItem from="1573685710304" duration="12435000" />
+      <workItem from="1573685710304" duration="12602000" />
+      <workItem from="1573700257557" duration="1609000" />
     </task>
     <servers />
   </component>
