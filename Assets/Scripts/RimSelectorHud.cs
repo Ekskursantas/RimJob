@@ -49,6 +49,7 @@ public class RimSelectorHud : MonoBehaviour
         {
             if (disabled) return;
             if (Cursor.lockState != CursorLockMode.Locked) Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
             rimMenu.SetActive(false);
             mainCamera.LockCamera(false);
             disabled = true;
@@ -61,8 +62,7 @@ public class RimSelectorHud : MonoBehaviour
             mouseTravel = new Vector2(0f, 0f);
             uiControls.SetActiveCreationUI(false);
             uiControls.SetActiveMainUI(true);
-            Cursor.visible = false;
-            
+
             if (pointer.GetSelection() == null) return;
             MenuCollisionHandler handler = pointer.GetSelection().GetComponent<MenuCollisionHandler>();
             if (handler.id < 0)

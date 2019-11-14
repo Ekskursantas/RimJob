@@ -6,6 +6,7 @@ using UnityEngine;
 public class ItemHandler : MonoBehaviour
 {
     public GameObject uiManager;
+    public GameObject menu;
     private Animator anim;
     private bool clicked = false;
     private bool opened = false;
@@ -26,12 +27,12 @@ public class ItemHandler : MonoBehaviour
         bool rDown = Input.GetKey(KeyCode.R);
         bool eDown = Input.GetKey(KeyCode.E);
         bool mouseDown = Input.GetKey(KeyCode.Mouse0);
-        if (!eDown && !rDown && mouseDown && !anim.GetBool("Open") && inRange)
+        if (!menu.activeSelf && !eDown && !rDown && mouseDown && !anim.GetBool("Open") && inRange)
         {
             uiControls.SetActiveCloseGarage(true);
             uiControls.SetActiveOpenGarage(false);
             anim.SetBool("Open", true);
-        } else if (!eDown && !rDown && mouseDown && anim.GetBool("Open") && inRange)
+        } else if (!menu.activeSelf &&!eDown && !rDown && mouseDown && anim.GetBool("Open") && inRange)
         {
             uiControls.SetActiveCloseGarage(false);
             uiControls.SetActiveOpenGarage(true);
