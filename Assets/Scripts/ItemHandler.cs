@@ -10,7 +10,7 @@ public class ItemHandler : MonoBehaviour
 
     private Animator anim;
     private bool clicked = false;
-    private bool inRange = false;
+    public static bool inRange = false;
 
     private InfoManager uiControls;
 
@@ -43,6 +43,7 @@ public class ItemHandler : MonoBehaviour
     {
         if (!other.CompareTag("Player")) return;
         inRange = true;
+        if (uiControls.CreateUIIsActive() || uiControls.HoldUIIsActive()) return;
         uiControls.SetActiveMainUI(true);
     }
 
@@ -53,9 +54,5 @@ public class ItemHandler : MonoBehaviour
         uiControls.SetActiveMainUI(false);
     }
 
-
-    public bool IsInRange()
-    {
-        return inRange;
-    }
+    
 }

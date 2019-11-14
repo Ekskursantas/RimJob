@@ -29,8 +29,11 @@ public class Movement : MonoBehaviour
             velocity.y = -2f;
         }
 
-        Vector3 move = transform.right * Input.GetAxis("Horizontal") + transform.forward * Input.GetAxis("Vertical");
-        charCon.Move(move * Time.deltaTime * speed);
+        if (!Input.GetKey(KeyCode.R) || !ItemHandler.inRange)
+        {
+            Vector3 move = transform.right * Input.GetAxis("Horizontal") +transform.forward * Input.GetAxis("Vertical");
+            charCon.Move(move * Time.deltaTime * speed);
+        }
         velocity.y += gravity * Time.deltaTime;
         charCon.Move(velocity * Time.deltaTime);
     }

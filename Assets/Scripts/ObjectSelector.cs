@@ -82,7 +82,6 @@ public class ObjectSelector : MonoBehaviour
                 else if (Input.GetKeyUp(KeyCode.Mouse1) && isPainting)
                 {
                     camLook.LockCamera(false);
-                    ;
                     rimColorSelector.SetActive(false);
                     Cursor.visible = false;
                     if (Cursor.lockState != CursorLockMode.Locked) Cursor.lockState = CursorLockMode.Locked;
@@ -90,6 +89,8 @@ public class ObjectSelector : MonoBehaviour
                 }
                 else if (Input.GetKey(KeyCode.Delete))
                 {
+                    uiControls.SetActiveHoldUI(false);
+                    if(ItemHandler.inRange) uiControls.SetActiveMainUI(true);
                     RimSpawner.DestroyRim(carried.transform.gameObject);
                     destroyed = true;
                 }
@@ -120,7 +121,7 @@ public class ObjectSelector : MonoBehaviour
             }
 
             uiControls.SetActiveHoldUI(false);
-            uiControls.SetActiveMainUI(true);
+            if(ItemHandler.inRange) uiControls.SetActiveMainUI(true);
             Cursor.visible = false;
             carried.rigidbody.useGravity = true;
             release = true;

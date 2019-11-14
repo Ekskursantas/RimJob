@@ -26,7 +26,6 @@ public class RimSelectorHud : MonoBehaviour
     private ColorPickerTriangle CP;
     private bool isPainting = false;
     private bool disabled = true;
-    private ItemHandler _itemHandler;
     private InfoManager uiControls;
 
     private void Start()
@@ -36,13 +35,12 @@ public class RimSelectorHud : MonoBehaviour
         mainCamera = primaryCamera.GetComponent<CameraLook>();
         spawner = GetComponent<RimSpawner>();
         CP = rimColorSelector.GetComponent<ColorPickerTriangle>();
-        _itemHandler = garage.GetComponent<ItemHandler>();
     }
 
     void Update()
     {
         if (uiControls.HoldUIIsActive()) return;
-        if (!_itemHandler.IsInRange()) return;
+        if (!ItemHandler.inRange) return;
         if (!Input.GetKey(KeyCode.R))
         {
             if (disabled) return;
@@ -59,7 +57,7 @@ public class RimSelectorHud : MonoBehaviour
             selected = false;
             mouseTravel = new Vector2(0f, 0f);
             uiControls.SetActiveCreationUI(false);
-            uiControls.SetActiveMainUI(true);
+            if(ItemHandler.inRange) uiControls.SetActiveMainUI(true);
 
             if (pointer.GetSelection() == null) return;
             MenuCollisionHandler handler = pointer.GetSelection().GetComponent<MenuCollisionHandler>();
