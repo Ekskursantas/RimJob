@@ -576,7 +576,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3929738536409659437}
   - component: {fileID: 6338084345838921399}
-  - component: {fileID: 6338084345838921398}
   - component: {fileID: 4098872967173475773}
   - component: {fileID: 6865412110162858489}
   - component: {fileID: -7966177990833049611}
@@ -631,18 +630,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &6338084345838921398
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6338084345838921392}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62167dff5690a7d48bd39a6433f9fc5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &4098872967173475773
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -684,7 +671,7 @@ MonoBehaviour:
   id: 1
   position: {x: 0, y: 0, z: 0}
   angle: {x: 0, y: 0, z: 0}
-  color: {r: 0, g: 0, b: 0, a: 0}
+  isKinematic: 0
 --- !u!114 &-8801511365879811285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -699,7 +686,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snapper: {fileID: 2623278881220771177}
   snapper2: {fileID: 1827809830932599020}
-  snapDisntance: 0.05
   magnet:
     serializedVersion: 2
     m_Bits: 512

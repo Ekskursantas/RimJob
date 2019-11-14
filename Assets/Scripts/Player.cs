@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        if(!MainMenuManager.isNew) gameManager.GetComponent<GameManager>().LoadPlayer();
+        if (!MainMenuManager.isNew) gameManager.GetComponent<GameManager>().LoadPlayer();
     }
 
     private void Update()
@@ -23,6 +23,4 @@ public class Player : MonoBehaviour
         playerYAngle = transform.localEulerAngles.y;
         cameraXAngle = playerCamera.transform.localEulerAngles.x;
     }
-
-
 }

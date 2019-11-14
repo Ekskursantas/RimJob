@@ -6,11 +6,13 @@ using UnityEngine.UI;
 
 public class MenuCollisionHandler : MonoBehaviour
 {
-    // Start is called before the first frame update
-    private bool colliding = false;
     public Sprite unselected;
     public Sprite selected;
+
     public int id;
+
+    // Start is called before the first frame update
+    private bool colliding = false;
     private Image imageSwap;
     private Image previousButton;
 
@@ -42,7 +44,7 @@ public class MenuCollisionHandler : MonoBehaviour
 
     public void Deselect()
     {
-        if(previousButton !=null) previousButton.sprite = unselected;
+        if (previousButton != null) previousButton.sprite = unselected;
         imageSwap.sprite = unselected;
     }
 }

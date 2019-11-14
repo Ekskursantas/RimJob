@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class RimSelectorHud : MonoBehaviour
-{ 
+{
     public GameObject uiManager;
     public GameObject rimMenu;
     public GameObject primaryCamera;
@@ -31,14 +31,12 @@ public class RimSelectorHud : MonoBehaviour
 
     private void Start()
     {
-        
         uiControls = uiManager.GetComponent<InfoManager>();
         if (Cursor.visible) Cursor.visible = false;
         mainCamera = primaryCamera.GetComponent<CameraLook>();
         spawner = GetComponent<RimSpawner>();
         CP = rimColorSelector.GetComponent<ColorPickerTriangle>();
         _itemHandler = garage.GetComponent<ItemHandler>();
-
     }
 
     void Update()
@@ -54,7 +52,7 @@ public class RimSelectorHud : MonoBehaviour
             mainCamera.LockCamera(false);
             disabled = true;
             if (!selected) return;
-            
+
             rimColorSelector.SetActive(false);
             Selector pointer = selector.GetComponent<Selector>();
             colorSelect = false;
@@ -70,6 +68,7 @@ public class RimSelectorHud : MonoBehaviour
                 handler.Deselect();
                 return;
             }
+
             spawner.Spawn(handler.id, isPainting ? CP.TheColor : Color.clear);
             handler.Deselect();
             isPainting = false;
@@ -106,5 +105,5 @@ public class RimSelectorHud : MonoBehaviour
         if (Cursor.lockState != CursorLockMode.None) Cursor.lockState = CursorLockMode.None;
         CP.SetNewColor(Color.white);
         isPainting = true;
-        }
+    }
 }

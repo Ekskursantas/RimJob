@@ -10,10 +10,9 @@ public class ObjectSelector : MonoBehaviour
     public float holdDistance;
     public float smooth;
     public GameObject rimColorSelector;
-  
+
     private bool carrying = false;
     private bool destroyed = false;
-    private CollisionHandler col;
     private RaycastHit carried;
     private Camera cam;
     private CameraLook camLook;
@@ -30,7 +29,7 @@ public class ObjectSelector : MonoBehaviour
         cam = GetComponent<Camera>();
         camLook = GetComponent<CameraLook>();
         CP = rimColorSelector.GetComponent<ColorPickerTriangle>();
-        middle = new Vector3(Screen.width/2, Screen.height/2, 0f);
+        middle = new Vector3(Screen.width / 2, Screen.height / 2, 0f);
         uiControls = uiManager.GetComponent<InfoManager>();
     }
 
@@ -48,6 +47,7 @@ public class ObjectSelector : MonoBehaviour
                 //TO BE DONE
                 return;
             }
+
             if (!(hit.distance < pickUpDistance)) return;
             var selection = hit;
             if (!selection.transform.CompareTag("Selection")) return;
@@ -65,47 +65,49 @@ public class ObjectSelector : MonoBehaviour
         {
             if (!destroyed)
             {
+                CarryObject(carried);
+                //for some reason sometimes this statement does not react and it takes few clicks for it to work....
+                if (Input.GetKeyUp(KeyCode.Mouse1) && !isPainting)
+                {
+                    camLook.LockCamera(true);
+                    rimColorSelector.SetActive(true);
+                    Cursor.visible = true;
+                    if (Cursor.lockState != CursorLockMode.None) Cursor.lockState = CursorLockMode.None;
+                    objectRenderer = carried.transform.gameObject.GetComponentsInChildren<Renderer>();
+                    CP.SetNewColor(objectRenderer[0].material.color);
+                    isPainting = true;
+                    uiControls.SetActiveChangeColor(false);
+                    uiControls.SetActiveConfirmColor(true);
+                }
+                else if (Input.GetKeyUp(KeyCode.Mouse1) && isPainting)
+                {
+                    camLook.LockCamera(false);
+                    ;
+                    rimColorSelector.SetActive(false);
+                    Cursor.visible = false;
+                    if (Cursor.lockState != CursorLockMode.Locked) Cursor.lockState = CursorLockMode.Locked;
+                    isPainting = false;
+                }
+                else if (Input.GetKey(KeyCode.Delete))
+                {
+                    RimSpawner.DestroyRim(carried.transform.gameObject);
+                    destroyed = true;
+                }
 
-                    CarryObject(carried);
-                    if (Input.GetKeyUp(KeyCode.Mouse1) && !isPainting)
+                if (isPainting)
+                {
+                    foreach (Renderer renderer in objectRenderer)
                     {
-                        camLook.LockCamera(true);
-                        rimColorSelector.SetActive(true);
-                        Cursor.visible = true;
-                        if (Cursor.lockState != CursorLockMode.None) Cursor.lockState = CursorLockMode.None;
-                        objectRenderer = carried.transform.gameObject.GetComponentsInChildren<Renderer>();
-                        CP.SetNewColor(objectRenderer[0].material.color);
-                        isPainting = true;
-                        uiControls.SetActiveChangeColor(false);
-                        uiControls.SetActiveConfirmColor(true);
-                    } else if (Input.GetKeyUp(KeyCode.Mouse1) && isPainting)
-                    {
-                        camLook.LockCamera(false);;
-                        rimColorSelector.SetActive(false);
-                        Cursor.visible = false;
-                        if (Cursor.lockState != CursorLockMode.Locked) Cursor.lockState = CursorLockMode.Locked;
-                        isPainting = false;
-
+                        renderer.material.color = CP.TheColor;
                     }
-                    else if (Input.GetKey(KeyCode.Delete))
-                    {
-                        RimSpawner.DestroyRim(carried.transform.gameObject);
-                        destroyed = true;
-                    }
-
-                    if (isPainting)
-                    {
-                        foreach (Renderer renderer in objectRenderer)
-                        {
-                            renderer.material.color = CP.TheColor;
-                        }
-                    }
+                }
             }
 
 
             if (Input.GetKey(KeyCode.E)) return;
             if (release) return;
-            camLook.LockCamera(false);;
+            camLook.LockCamera(false);
+            ;
             rimColorSelector.SetActive(false);
             if (!Cursor.visible) Cursor.visible = false;
             if (Cursor.lockState != CursorLockMode.Locked) Cursor.lockState = CursorLockMode.Locked;
@@ -116,10 +118,11 @@ public class ObjectSelector : MonoBehaviour
                 destroyed = false;
                 return;
             }
+
             uiControls.SetActiveHoldUI(false);
             uiControls.SetActiveMainUI(true);
             Cursor.visible = false;
-            carried.rigidbody.useGravity = true;    
+            carried.rigidbody.useGravity = true;
             release = true;
         }
     }
@@ -137,6 +140,5 @@ public class ObjectSelector : MonoBehaviour
         {
             o.rigidbody.isKinematic = true;
         }
-        
     }
 }

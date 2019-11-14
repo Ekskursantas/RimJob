@@ -27,7 +27,6 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="CameraLook.cs" t="Include" />
-          <e p="CollisionHandler.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
           <e p="ItemHandler.cs" t="Include" />
           <e p="Magnet.cs" t="Include" />

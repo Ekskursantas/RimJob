@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 [System.Serializable]
 public class RimData
 {
@@ -9,13 +10,13 @@ public class RimData
     public string[][] saveColor;
     public float[,] saveAngle;
     public bool[] isKinematic;
-    
+
     // Start is called before the first frame update
     public RimData(List<GameObject> rimData)
     {
         id = new int[rimData.Count];
-        savePos = new float[rimData.Count,3];
-        saveAngle = new float[rimData.Count,3];
+        savePos = new float[rimData.Count, 3];
+        saveAngle = new float[rimData.Count, 3];
         saveColor = new string[rimData.Count][];
         isKinematic = new bool[rimData.Count];
         for (int i = 0; i < rimData.Count; i++)
@@ -31,6 +32,5 @@ public class RimData
             saveAngle[i, 2] = rim.angle.z;
             isKinematic[i] = rim.kinematic();
         }
-
     }
 }

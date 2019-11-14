@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public GameObject player;
     public GameObject rimHandler;
     public GameObject playerCamera;
+
     private Movement move;
     private List<GameObject> spawnedRims;
     private Player _player;
@@ -23,7 +24,6 @@ public class GameManager : MonoBehaviour
         _rimSpawner = rimHandler.GetComponent<RimSpawner>();
         spawnedRims = _rimSpawner.ExistingRims();
         rims = _rimSpawner.rims;
-
     }
 
     public void SavePlayer()
@@ -75,7 +75,6 @@ public class GameManager : MonoBehaviour
                     renderers[j].material.color = tint;
                 }
             }
-
         }
     }
 
@@ -84,5 +83,3 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 }
-    
-

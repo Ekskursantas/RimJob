@@ -22,7 +22,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Rim.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ObjectSelector.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Selector.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CollisionHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Magnet.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Save/RimData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ColorPickerTriangle/Example/example.cs" root0="FORCE_HIGHLIGHTING" />
@@ -46,28 +45,28 @@
         <option value="$PROJECT_DIR$/Assets/ColorPickerTriangle/Scripts/ColorPickerTriangle.cs" />
         <option value="$PROJECT_DIR$/Assets/Loader.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Loader.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Save/SaveSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Save/PlayerData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/CameraLook.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/CollisionHandler.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Movement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/WheelSnapper.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Save/RimData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/WallSnapper.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/ButtonHandler.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Rim.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Selector.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MenuCollisionHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MainMenu/MainMenuManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Loader.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/InfoManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/RimSpawner.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Magnet.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/RimSelectorHud.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CollisionHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ObjectSelector.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Save/RimData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Save/SaveSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/InfoManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Loader.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/RimSpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WallSnapper.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/RimSelectorHud.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Rim.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Movement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MenuCollisionHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Magnet.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ItemHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CameraLook.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Selector.cs" />
       </list>
     </option>
   </component>
@@ -121,7 +120,7 @@
       <workItem from="1573567259688" duration="29331000" />
       <workItem from="1573640186162" duration="37691000" />
       <workItem from="1573685674781" duration="15000" />
-      <workItem from="1573685710304" duration="8018000" />
+      <workItem from="1573685710304" duration="9045000" />
     </task>
     <servers />
   </component>

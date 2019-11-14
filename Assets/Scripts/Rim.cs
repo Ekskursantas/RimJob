@@ -31,6 +31,4 @@ public class Rim : MonoBehaviour
     {
         return GetComponent<Rigidbody>().isKinematic;
     }
-
- 
 }

@@ -17,14 +17,14 @@ public class Loader : MonoBehaviour
 
     private void OnGUI()
     {
-
         if (Event.current.Equals(Event.KeyboardEvent("escape")))
         {
             menu.SetActive(!menu.activeSelf);
             cam.LockCamera(menu.activeSelf);
             Cursor.visible = menu.activeSelf;
             if (Cursor.lockState != CursorLockMode.None && menu.activeSelf) Cursor.lockState = CursorLockMode.None;
-            else if (Cursor.lockState != CursorLockMode.Locked && !menu.activeSelf) Cursor.lockState = CursorLockMode.Locked;
+            else if (Cursor.lockState != CursorLockMode.Locked && !menu.activeSelf)
+                Cursor.lockState = CursorLockMode.Locked;
         }
     }
 

@@ -7,14 +7,14 @@ public class RimSpawner : MonoBehaviour
 {
     public GameObject[] rims;
     public GameObject camera;
-    private static List<GameObject>  spawnedRims = new List<GameObject>();
+    private static List<GameObject> spawnedRims = new List<GameObject>();
     public GameObject gameManager;
 
     public float distance;
 
     public void Start()
     {
-       if(!MainMenuManager.isNew) gameManager.GetComponent<GameManager>().LoadRims();
+        if (!MainMenuManager.isNew) gameManager.GetComponent<GameManager>().LoadRims();
     }
 
     public void Spawn(int id, Color tint)
@@ -47,5 +47,4 @@ public class RimSpawner : MonoBehaviour
         spawnedRims.Remove(rim);
         Destroy(rim);
     }
-   
 }

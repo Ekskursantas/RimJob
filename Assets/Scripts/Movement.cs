@@ -10,10 +10,11 @@ public class Movement : MonoBehaviour
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
-    
+
     private CharacterController charCon;
     private Vector3 velocity;
     private bool isGrounded;
+
     void Start()
     {
         charCon = GetComponent<CharacterController>();
@@ -32,7 +33,6 @@ public class Movement : MonoBehaviour
         charCon.Move(move * Time.deltaTime * speed);
         velocity.y += gravity * Time.deltaTime;
         charCon.Move(velocity * Time.deltaTime);
-        
     }
 
     public void LoadPosition(Vector3 pos)

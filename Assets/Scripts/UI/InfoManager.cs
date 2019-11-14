@@ -52,7 +52,7 @@ public class InfoManager : MonoBehaviour
     {
         return creationUI.activeSelf;
     }
-    
+
     public bool HoldUIIsActive()
     {
         return holdUI.activeSelf;

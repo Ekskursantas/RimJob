@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class CameraLook : MonoBehaviour
 {
-    private Vector2 mouseTravel;
-    private Vector2 smooth;
-    private Vector2 mouse;
     public float sensitivity = 5.0f;
     public float smoothness = 2.0f;
     public GameObject character;
+
+    private Vector2 mouseTravel;
+    private Vector2 smooth;
+    private Vector2 mouse;
+
 
     private bool cameraLock = false;
 
@@ -33,7 +35,7 @@ public class CameraLook : MonoBehaviour
         transform.localRotation = Quaternion.AngleAxis(-mouseTravel.y, Vector3.right);
         character.transform.localRotation = Quaternion.AngleAxis(mouseTravel.x, character.transform.up);
     }
-    
+
     public void LockCamera(bool lockBool)
     {
         cameraLock = lockBool;
@@ -46,6 +48,4 @@ public class CameraLook : MonoBehaviour
         angle = (angle > 180) ? angle - 360 : angle;
         mouseTravel.y = -angle;
     }
-
-  
 }

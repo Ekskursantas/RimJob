@@ -12,8 +12,8 @@ public class SaveSystem
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/game.data";
         FileStream stream = new FileStream(path, FileMode.Create);
-       
-        
+
+
         RimData data = new RimData(rimData);
         formatter.Serialize(stream, data);
         stream.Close();
@@ -36,14 +36,14 @@ public class SaveSystem
             return null;
         }
     }
-    
+
     public static void SavePlayer(Player player)
     {
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/player.data";
         FileStream stream = new FileStream(path, FileMode.Create);
-       
-        
+
+
         PlayerData data = new PlayerData(player);
         formatter.Serialize(stream, data);
         stream.Close();

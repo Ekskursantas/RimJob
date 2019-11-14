@@ -8,11 +8,12 @@ public class WallSnapper : MonoBehaviour
 {
     public Transform snapper;
     public Transform snapper2;
-    private float snapDistance = 0.05f;
     public LayerMask magnet;
     public bool snapped = false;
     private bool isSnapped = false;
     private bool isSnapped2 = false;
+    private float snapDistance = 0.05f;
+
     // Start is called before the first frame update
     private void Update()
     {
@@ -24,4 +25,3 @@ public class WallSnapper : MonoBehaviour
         }
     }
 }
-
