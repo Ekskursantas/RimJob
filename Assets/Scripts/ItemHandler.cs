@@ -9,7 +9,6 @@ public class ItemHandler : MonoBehaviour
     public GameObject menu;
     private Animator anim;
     private bool clicked = false;
-    private bool opened = false;
     private bool inRange = false;
 
     private InfoManager uiControls;
@@ -22,23 +21,20 @@ public class ItemHandler : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+
+    private void OnGUI()
     {
-        bool rDown = Input.GetKey(KeyCode.R);
-        bool eDown = Input.GetKey(KeyCode.E);
-        bool mouseDown = Input.GetKey(KeyCode.Mouse0);
-        if (!menu.activeSelf && !eDown && !rDown && mouseDown && !anim.GetBool("Open") && inRange)
+        if (Event.current.Equals(Event.KeyboardEvent("return")) && !anim.GetBool("Open") && inRange)
         {
             uiControls.SetActiveCloseGarage(true);
             uiControls.SetActiveOpenGarage(false);
             anim.SetBool("Open", true);
-        } else if (!menu.activeSelf &&!eDown && !rDown && mouseDown && anim.GetBool("Open") && inRange)
+        } else if (Event.current.Equals(Event.KeyboardEvent("return")) && anim.GetBool("Open") && inRange)
         {
             uiControls.SetActiveCloseGarage(false);
             uiControls.SetActiveOpenGarage(true);
             anim.SetBool("Open", false);
         }
-        
     }
 
     private void OnTriggerEnter(Collider other)

@@ -71,7 +71,7 @@ public class ObjectSelector : MonoBehaviour
                     {
                         camLook.LockCamera(true);
                         rimColorSelector.SetActive(true);
-                        if (!Cursor.visible) Cursor.visible = true;
+                        Cursor.visible = true;
                         if (Cursor.lockState != CursorLockMode.None) Cursor.lockState = CursorLockMode.None;
                         objectRenderer = carried.transform.gameObject.GetComponentsInChildren<Renderer>();
                         CP.SetNewColor(objectRenderer[0].material.color);
@@ -82,7 +82,7 @@ public class ObjectSelector : MonoBehaviour
                     {
                         camLook.LockCamera(false);;
                         rimColorSelector.SetActive(false);
-                        if (!Cursor.visible) Cursor.visible = false;
+                        Cursor.visible = false;
                         if (Cursor.lockState != CursorLockMode.Locked) Cursor.lockState = CursorLockMode.Locked;
                         isPainting = false;
 
@@ -118,7 +118,7 @@ public class ObjectSelector : MonoBehaviour
             }
             uiControls.SetActiveHoldUI(false);
             uiControls.SetActiveMainUI(true);
-
+            Cursor.visible = false;
             carried.rigidbody.useGravity = true;    
             release = true;
         }
